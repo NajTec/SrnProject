@@ -1,0 +1,78 @@
+﻿@page "/file"
+
+@inject Client Client
+ 
+<h3>MyFiles</h3>
+
+<div class="d-flex flex-row flex-fill align-items-stretch">
+    <div class="flex-fill d-flex flex-column d-flex align-items-stretch" style="background-color:#bdbdbd">
+        <div class="container flex-fill" style="overflow:auto;height:auto;background-color:lightgray;">
+            <br />
+            <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowSorting="true" Data="Files" TItem="FileDTO" ColumnWidth="300px">
+                <Columns>
+                    <RadzenDataGridColumn TItem="FileDTO" Property="Owner" Filterable="true" Title="Owner"></RadzenDataGridColumn>
+                    <RadzenDataGridColumn TItem="FileDTO" Property="Filename" Filterable="true" Title="Filename"></RadzenDataGridColumn>
+                    <RadzenDataGridColumn TItem="FileDTO" Property="Granted" Title="Granted" Filterable="true">
+                        <Template Context="data">
+                            <Radzen.Blazor.RadzenDropDown Data="data.Granted" TValue="string"></Radzen.Blazor.RadzenDropDown>
+                        </Template>
+                    </RadzenDataGridColumn>
+                    <RadzenDataGridColumn TItem="FileDTO" Property="Buffstring" Title="UserToAdd">
+                        <Template Context="data">
+                            <input class="form-text" type="text" @bind-value="data.Buffstring" />
+                            <RadzenButton class="btn-dark" @onclick="() => AddNewUserToFile(data)" Text="AddUser"></RadzenButton>
+                        </Template>
+                    </RadzenDataGridColumn>
+                </Columns>
+            </RadzenDataGrid>
+            <br />
+
+            <h3>Fileupload: </h3>
+            <br />
+
+            <input type="file" @bind-value="NameOfFile" />
+            <button class="btn-dark" @onclick="testGet"></button>
+
+        </div>
+    </div>
+</div>
+
+
+@code {
+
+    //email-adresse
+    [Parameter]
+    public string UserToAdd { get; set; }
+    [Parameter]
+    public string NameOfFile { get; set; }
+
+    public IEnumerable<FileDTO> Files;
+
+    protected override void OnInitialized()
+    {
+        this.Files = new List<FileDTO>() {
+            new FileDTO { Owner="Jan", Filename="Text", Granted = new List<string> { "nico","benni" }, Buffstring=string.Empty },
+            new FileDTO { Owner="Nico", Filename="Iwas.txt", Granted = new List<string> { "nico","benni" }, Buffstring=string.Empty }
+        };
+        //GetAnfrage an Server
+        base.OnInitialized();
+    }
+
+    public async Task testGet() {
+        HttpClient client = new HttpClient();
+        client.BaseAddress = new Uri("http://localhost:8080");
+        var response = await client.GetAsync("/User");
+        Console.WriteLine("success");
+    }
+
+    private async Task Upload() {
+        Console.WriteLine(NameOfFile);
+    }
+
+    private void AddNewUserToFile(FileDTO fileDTO)
+    {
+        //HttpClient macht Postanfrage
+        StateHasChanged();
+    }
+
+}

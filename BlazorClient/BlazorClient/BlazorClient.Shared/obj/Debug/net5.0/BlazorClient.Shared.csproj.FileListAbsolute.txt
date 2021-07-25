@@ -1,0 +1,11 @@
+C:\Users\JanKl\Documents\TIM\SRN\srn06\BlazorClient\BlazorClient\BlazorClient.Shared\bin\Debug\net5.0\BlazorClient.Shared.deps.json
+C:\Users\JanKl\Documents\TIM\SRN\srn06\BlazorClient\BlazorClient\BlazorClient.Shared\bin\Debug\net5.0\BlazorClient.Shared.dll
+C:\Users\JanKl\Documents\TIM\SRN\srn06\BlazorClient\BlazorClient\BlazorClient.Shared\bin\Debug\net5.0\ref\BlazorClient.Shared.dll
+C:\Users\JanKl\Documents\TIM\SRN\srn06\BlazorClient\BlazorClient\BlazorClient.Shared\bin\Debug\net5.0\BlazorClient.Shared.pdb
+C:\Users\JanKl\Documents\TIM\SRN\srn06\BlazorClient\BlazorClient\BlazorClient.Shared\obj\Debug\net5.0\BlazorClient.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JanKl\Documents\TIM\SRN\srn06\BlazorClient\BlazorClient\BlazorClient.Shared\obj\Debug\net5.0\BlazorClient.Shared.AssemblyInfoInputs.cache
+C:\Users\JanKl\Documents\TIM\SRN\srn06\BlazorClient\BlazorClient\BlazorClient.Shared\obj\Debug\net5.0\BlazorClient.Shared.AssemblyInfo.cs
+C:\Users\JanKl\Documents\TIM\SRN\srn06\BlazorClient\BlazorClient\BlazorClient.Shared\obj\Debug\net5.0\BlazorClient.Shared.csproj.CoreCompileInputs.cache
+C:\Users\JanKl\Documents\TIM\SRN\srn06\BlazorClient\BlazorClient\BlazorClient.Shared\obj\Debug\net5.0\BlazorClient.Shared.dll
+C:\Users\JanKl\Documents\TIM\SRN\srn06\BlazorClient\BlazorClient\BlazorClient.Shared\obj\Debug\net5.0\ref\BlazorClient.Shared.dll
+C:\Users\JanKl\Documents\TIM\SRN\srn06\BlazorClient\BlazorClient\BlazorClient.Shared\obj\Debug\net5.0\BlazorClient.Shared.pdb

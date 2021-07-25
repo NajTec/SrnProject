@@ -1,0 +1,60 @@
+﻿@page "/userlogin"
+
+@inject HttpClient httpClient
+@inject NavigationManager Navigationmanager
+@inject UserLoginViewModel userLoginViewModel
+@inject Client Client 
+@inject ILocalStorageService localStorage
+
+<h3>UserLogin</h3>
+
+<div class="container">
+    <div class="row">
+        <div class="flex-column">
+            <h3>Login</h3>
+            <br />
+            <EditForm Model="userLoginViewModel">
+                <div class="row" style="padding:5px;">
+                    <RadzenLabel Text="Username: "></RadzenLabel>
+                    <RadzenTextBox @bind-Value="userLoginViewModel.Username"></RadzenTextBox>
+                </div>
+                <br />
+                <div class="row" style="padding:5px;">
+                    <RadzenLabel Text="Password: "></RadzenLabel>
+                    <RadzenPassword @bind-Value="userLoginViewModel.Password"></RadzenPassword>
+                </div>
+                <br />
+                <div class="row" style="padding:5px;">
+                    <Button @onclick="() => OnLogin()">Login</Button>
+                    <NavLink href="/register">
+                        <button>Register</button>
+                    </NavLink>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    protected override void OnInitialized()
+    {
+        Client client = new Client();
+        localStorage.SetItemAsync("client",client);
+        base.OnInitialized();
+    }
+
+    void OnLogin()
+    {
+        Navigationmanager.NavigateTo($"/file");
+        Console.WriteLine(userLoginViewModel.Username);
+        Console.WriteLine(userLoginViewModel.Password);
+    }
+
+    void OnRegister()
+    {
+
+    }
+
+}
+

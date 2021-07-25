@@ -1,0 +1,94 @@
+﻿@page "/register"
+
+@inject UserRegisterViewModel userRegisterViewModel
+@inject HttpClient httpClient
+@inject UserDTO user
+
+<div class="d-flex flex-row flex-fill align-items-stretch">
+    <div class="flex-fill d-flex flex-column d-flex align-items-stretch" style="background-color:#bdbdbd">
+        <div class="container flex-fill" style="overflow:auto;height:auto;background-color:lightgray;">
+            <br />
+            <EditForm Model="userRegisterViewModel">
+                <DataAnnotationsValidator></DataAnnotationsValidator>
+                <ValidationSummary></ValidationSummary>
+                <h3>Register</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <RadzenLabel Text="Email: "></RadzenLabel>
+                            <RadzenTextBox @bind-Value="userRegisterViewModel.Email"></RadzenTextBox>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <RadzenLabel Text="Password: "></RadzenLabel>
+                            <RadzenTextBox @bind-Value="userRegisterViewModel.Password"></RadzenTextBox>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <Radzen.Blazor.RadzenLabel Text="Gender: "></Radzen.Blazor.RadzenLabel>
+                        <RadzenRadioButtonList @bind-Value="userRegisterViewModel.Gender" TValue="string">
+                            <Items>
+                                <RadzenRadioButtonListItem Text="männlich" Value="male"></RadzenRadioButtonListItem>
+                                <RadzenRadioButtonListItem Text="weiblich" Value="female"></RadzenRadioButtonListItem>
+                                <RadzenRadioButtonListItem Text="divers" Value="divers"></RadzenRadioButtonListItem>
+                            </Items>
+                        </RadzenRadioButtonList>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <RadzenLabel Text="Country: "></RadzenLabel>
+                            <RadzenTextBox Style="margin-left:8px;" @bind-Value="userRegisterViewModel.Country"></RadzenTextBox>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <RadzenLabel Text="Firstname: "></RadzenLabel>
+                            <RadzenTextBox @bind-Value="userRegisterViewModel.FirstName"></RadzenTextBox>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <RadzenLabel Text="Lastname: "></RadzenLabel>
+                            <RadzenTextBox @bind-Value="userRegisterViewModel.LastName"></RadzenTextBox>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <RadzenLabel Text="Calendar: "></RadzenLabel>
+                        <Radzen.Blazor.RadzenDatePicker @bind-Value="@value" Inline="true" Change="@(args => OnChange(args, "Calendar", "MM/dd/yyyy"))"  >
+                        </Radzen.Blazor.RadzenDatePicker>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+@code {
+    const string male = "männlich";
+    const string female = "weiblich";
+    const string divers = "divers";
+    DateTime? value = DateTime.Now;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+
+    private void OnChange(DateTime? value, string name, string format)
+    {
+        Console.WriteLine("triggered");
+        Console.WriteLine(value?.ToString());
+        //userRegisterViewModel.Birthday = Date.ToString();
+    }
+
+}
