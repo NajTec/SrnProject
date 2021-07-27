@@ -28,7 +28,7 @@ public class Service
 
         try 
         {
-            Files.delete(Paths.get(rootPath + "/" + "Storage" + "/" + fileDirectory));
+            Files.delete(Paths.get(rootPath + "/" + "Repository" + "/" + fileDirectory));
 
             return true;
         } 
@@ -82,7 +82,7 @@ public class Service
     }
 
 
-    //Server muss eine 10GB Nachricht erhalten!
+    //TODO: Server muss eine 10GB Nachricht erhalten!
     public final boolean readFile(final String email, final String sourcePath)
     {
         final String rootPath = this.rootPath + "/" + email + "/";
