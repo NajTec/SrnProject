@@ -1,6 +1,6 @@
 package com.service;
 
-import java.util.Vector;
+import java.util.List;
 
 import com.storage.Storage;
 
@@ -14,7 +14,7 @@ public class App
     {
         Storage storage = new Storage("storage");
         //storage.createRepository("matthias@gmail.com");
-        Vector<String> list = storage.listDirectories("directory", "matthias@gmail.com", "Storage");
+        List<String> list = storage.listDirectories("directory", "matthias@gmail.com", "Storage");
         list.forEach(System.out::println);
         storage.deleteRepository("matthias@gmail.com");
     }
