@@ -43,6 +43,10 @@
         <!--<Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="6" 
                Source="C:\Users\JanKl\Pictures\85f366c4-0813-4a71-b487-a5f7a1a9ab00 (2).jpg" />
         -->
-        
+       <!-- <WrapPanel Grid.Row="1" Grid.Column="4" Grid.RowSpan="6" Orientation="Horizontal" >
+            <Image MaxHeight="200" MaxWidth="200" Source="C:\Users\JanKl\Pictures\85f366c4-0813-4a71-b487-a5f7a1a9ab00 (2).jpg"></Image>
+            <Image MaxHeight="200" MaxWidth="200" Source="C:\Users\JanKl\Pictures\85f366c4-0813-4a71-b487-a5f7a1a9ab00 (2).jpg"></Image>
+        </WrapPanel> -->
+
     </Grid>
 </Window>

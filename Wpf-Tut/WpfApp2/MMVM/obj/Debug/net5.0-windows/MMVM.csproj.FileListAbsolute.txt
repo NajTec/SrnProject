@@ -1,0 +1,5 @@
+C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\MMVM\obj\Debug\net5.0-windows\MMVM.csprojAssemblyReference.cache
+C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\MMVM\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\MMVM\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\MMVM\obj\Debug\net5.0-windows\MMVM_MarkupCompile.cache
+C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\MMVM\obj\Debug\net5.0-windows\MMVM_MarkupCompile.lref

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JanKl\\source\\repos\\WpfApp2\\WpfApp2\\WpfApp2.csproj": {}
+    "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\Wpf-Tut\\WpfApp2\\WpfApp2\\WpfApp2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JanKl\\source\\repos\\WpfApp2\\WpfApp2\\WpfApp2.csproj": {
+    "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\Wpf-Tut\\WpfApp2\\WpfApp2\\WpfApp2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JanKl\\source\\repos\\WpfApp2\\WpfApp2\\WpfApp2.csproj",
+        "projectUniqueName": "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\Wpf-Tut\\WpfApp2\\WpfApp2\\WpfApp2.csproj",
         "projectName": "WpfApp2",
-        "projectPath": "C:\\Users\\JanKl\\source\\repos\\WpfApp2\\WpfApp2\\WpfApp2.csproj",
+        "projectPath": "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\Wpf-Tut\\WpfApp2\\WpfApp2\\WpfApp2.csproj",
         "packagesPath": "C:\\Users\\JanKl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JanKl\\source\\repos\\WpfApp2\\WpfApp2\\obj\\",
+        "outputPath": "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\Wpf-Tut\\WpfApp2\\WpfApp2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\JanKl\\AppData\\Roaming\\NuGet\\NuGet.Config",
