@@ -118,9 +118,9 @@ public class Storage
         if(stringPredicate == "directory")
             predicate = Files::isDirectory;
 
-        final String rootPath = this.rootPath + "/" + email + "/" + "Repository" + "/";
+        final String rootPath = this.rootPath + "/" + email + "/";
 
-        try (Stream<Path> walk = Files.walk(Paths.get(rootPath + directory))) 
+        try (Stream<Path> walk = Files.walk(Paths.get(rootPath + directory+"/"))) 
         {
             List<String> result = walk.filter(predicate)
                                         .filter(s -> {if(s.toString().contains(email + "/" + "KeyNotary")) return false; else return true;})
@@ -131,6 +131,7 @@ public class Storage
         } 
         catch (IOException e) 
         {
+            e.printStackTrace();
             return null;
         }
     }
