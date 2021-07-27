@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JanKl\\Documents\\TIM\\SRN\\srn06\\BlazorClient\\BlazorClient\\BlazorClient\\BlazorClient.csproj": {}
+    "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\BlazorClient\\BlazorClient\\BlazorClient\\BlazorClient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JanKl\\Documents\\TIM\\SRN\\srn06\\BlazorClient\\BlazorClient\\BlazorClient.Shared\\BlazorClient.Shared.csproj": {
+    "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\BlazorClient\\BlazorClient\\BlazorClient.Shared\\BlazorClient.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JanKl\\Documents\\TIM\\SRN\\srn06\\BlazorClient\\BlazorClient\\BlazorClient.Shared\\BlazorClient.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\BlazorClient\\BlazorClient\\BlazorClient.Shared\\BlazorClient.Shared.csproj",
         "projectName": "BlazorClient.Shared",
-        "projectPath": "C:\\Users\\JanKl\\Documents\\TIM\\SRN\\srn06\\BlazorClient\\BlazorClient\\BlazorClient.Shared\\BlazorClient.Shared.csproj",
+        "projectPath": "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\BlazorClient\\BlazorClient\\BlazorClient.Shared\\BlazorClient.Shared.csproj",
         "packagesPath": "C:\\Users\\JanKl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JanKl\\Documents\\TIM\\SRN\\srn06\\BlazorClient\\BlazorClient\\BlazorClient.Shared\\obj\\",
+        "outputPath": "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\BlazorClient\\BlazorClient\\BlazorClient.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\JanKl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,14 +58,14 @@
         }
       }
     },
-    "C:\\Users\\JanKl\\Documents\\TIM\\SRN\\srn06\\BlazorClient\\BlazorClient\\BlazorClient\\BlazorClient.csproj": {
+    "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\BlazorClient\\BlazorClient\\BlazorClient\\BlazorClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JanKl\\Documents\\TIM\\SRN\\srn06\\BlazorClient\\BlazorClient\\BlazorClient\\BlazorClient.csproj",
+        "projectUniqueName": "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\BlazorClient\\BlazorClient\\BlazorClient\\BlazorClient.csproj",
         "projectName": "BlazorClient",
-        "projectPath": "C:\\Users\\JanKl\\Documents\\TIM\\SRN\\srn06\\BlazorClient\\BlazorClient\\BlazorClient\\BlazorClient.csproj",
+        "projectPath": "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\BlazorClient\\BlazorClient\\BlazorClient\\BlazorClient.csproj",
         "packagesPath": "C:\\Users\\JanKl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JanKl\\Documents\\TIM\\SRN\\srn06\\BlazorClient\\BlazorClient\\BlazorClient\\obj\\",
+        "outputPath": "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\BlazorClient\\BlazorClient\\BlazorClient\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\JanKl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,8 +82,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\JanKl\\Documents\\TIM\\SRN\\srn06\\BlazorClient\\BlazorClient\\BlazorClient.Shared\\BlazorClient.Shared.csproj": {
-                "projectPath": "C:\\Users\\JanKl\\Documents\\TIM\\SRN\\srn06\\BlazorClient\\BlazorClient\\BlazorClient.Shared\\BlazorClient.Shared.csproj"
+              "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\BlazorClient\\BlazorClient\\BlazorClient.Shared\\BlazorClient.Shared.csproj": {
+                "projectPath": "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\BlazorClient\\BlazorClient\\BlazorClient.Shared\\BlazorClient.Shared.csproj"
               }
             }
           }

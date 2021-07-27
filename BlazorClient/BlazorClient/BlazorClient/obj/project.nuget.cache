@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VHHI4gOD+E2shcTutDbcu4vaRkWUe6ad8k+1l2N5Wfi7iKbdrAdS33jiy2STUzV5oi5CWEdnN841UCnDK2fEJw==",
+  "dgSpecHash": "iLZDAxC2qngaGQKWABfELt3DeswsD2HXr7lugXPUoiiFBJ9SSqPjpy0xy5PyytKSmYO5TUgmotvVJqN5gSzhXQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JanKl\\Documents\\TIM\\SRN\\srn06\\BlazorClient\\BlazorClient\\BlazorClient\\BlazorClient.csproj",
+  "projectFilePath": "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\BlazorClient\\BlazorClient\\BlazorClient\\BlazorClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JanKl\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.5\\microsoft.aspnetcore.authorization.5.0.5.nupkg.sha512",
     "C:\\Users\\JanKl\\.nuget\\packages\\microsoft.aspnetcore.components\\5.0.5\\microsoft.aspnetcore.components.5.0.5.nupkg.sha512",

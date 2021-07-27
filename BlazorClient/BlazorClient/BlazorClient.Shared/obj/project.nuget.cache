@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RtKyXy3st1Kj3j9wSaHjlwWHUeIBM+QinlAyi6puFaoM7NuZnXYPZ8ju9LxIfehI2m3xz1fDhdirEHBTQ728Cw==",
+  "dgSpecHash": "1/HHPg3jaBlEvPjeoMnCOhMIi7gHBDW9Bno3GJka8E8Z6mi1ZiVMzE0WN8+fMbFzB1ybYy0F2Aio+HtY29/MPA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JanKl\\Documents\\TIM\\SRN\\srn06\\BlazorClient\\BlazorClient\\BlazorClient.Shared\\BlazorClient.Shared.csproj",
+  "projectFilePath": "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\BlazorClient\\BlazorClient\\BlazorClient.Shared\\BlazorClient.Shared.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

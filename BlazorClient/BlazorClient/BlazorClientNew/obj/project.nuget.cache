@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Kv5wOYd+s0kVGyhOVsKvcmlH8mbH/hoI+QAJHdCGAYZVKlxiylW6Luwxg6Jx8GNCPOLnxac87tkf5BcH9cFIEQ==",
+  "dgSpecHash": "Z58VfHXO6Q0CO/8CZdx7M7cbXuvlFs1nTc18/TRxGDUxAGCzgOIw2IGkZaOZXmKIvStzxqZb4HnqU1oBdThgFg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JanKl\\Documents\\TIM\\SRN\\srn06\\BlazorClient\\BlazorClient\\BlazorClientNew\\BlazorClientNew.csproj",
+  "projectFilePath": "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\BlazorClient\\BlazorClient\\BlazorClientNew\\BlazorClientNew.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JanKl\\.nuget\\packages\\blazored.localstorage\\4.1.1\\blazored.localstorage.4.1.1.nupkg.sha512",
     "C:\\Users\\JanKl\\.nuget\\packages\\bouncycastle.netcore\\1.8.8\\bouncycastle.netcore.1.8.8.nupkg.sha512",

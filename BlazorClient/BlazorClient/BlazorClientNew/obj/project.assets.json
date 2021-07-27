@@ -2674,11 +2674,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JanKl\\Documents\\TIM\\SRN\\srn06\\BlazorClient\\BlazorClient\\BlazorClientNew\\BlazorClientNew.csproj",
+      "projectUniqueName": "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\BlazorClient\\BlazorClient\\BlazorClientNew\\BlazorClientNew.csproj",
       "projectName": "BlazorClientNew",
-      "projectPath": "C:\\Users\\JanKl\\Documents\\TIM\\SRN\\srn06\\BlazorClient\\BlazorClient\\BlazorClientNew\\BlazorClientNew.csproj",
+      "projectPath": "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\BlazorClient\\BlazorClient\\BlazorClientNew\\BlazorClientNew.csproj",
       "packagesPath": "C:\\Users\\JanKl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JanKl\\Documents\\TIM\\SRN\\srn06\\BlazorClient\\BlazorClient\\BlazorClientNew\\obj\\",
+      "outputPath": "C:\\Users\\JanKl\\Documents\\GitHub\\SrnProject\\BlazorClient\\BlazorClient\\BlazorClientNew\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\JanKl\\AppData\\Roaming\\NuGet\\NuGet.Config",
