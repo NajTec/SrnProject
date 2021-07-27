@@ -10,11 +10,11 @@ import java.nio.file.StandardCopyOption;
 
 public class Service 
 {
-    private final String rootPath;
+    private final String repository;
 
-    public Service(final String rootPath)
+    public Service(final String repository)
     {
-        this.rootPath = rootPath;
+        this.repository = repository;
     }
     
 
@@ -22,13 +22,11 @@ public class Service
      * Delete: File in repository with name email. 
      * Return: True if the destruction was successful and false if not
      * */
-    public final boolean deleteFile(final String email, final String fileDirectory)
+    public final boolean deleteFile(final String fileDirectory)
     {
-        final String rootPath = this.rootPath + "/" + email;
-
         try 
         {
-            Files.delete(Paths.get(rootPath + "/" + "Repository" + "/" + fileDirectory));
+            Files.delete(Paths.get(this.repository + fileDirectory));
 
             return true;
         } 
@@ -43,13 +41,11 @@ public class Service
      * copyFileToDirectory: File in repository with name email. 
      * Return: True if the copy was successful and false if not
      * */
-    public final boolean copyFile(final String email, final String sourcePath, final String destinationPath)
+    public final boolean copyFile(final String sourcePath, final String destinationPath)
     {
-        final String rootPath = this.rootPath + "/" + email + "/";
-
         try 
         {
-            Files.copy(Paths.get(rootPath + "/" + sourcePath), Paths.get(rootPath + "/" + destinationPath));
+            Files.copy(Paths.get(this.repository + sourcePath), Paths.get(this.repository + destinationPath));
 
             return true;
         } 
@@ -64,13 +60,11 @@ public class Service
      * moveFile: File in repository with name email. 
      * Return: True if the move was successful and false if not
      * */
-    public final boolean moveFile(final String email, final String sourcePath, final String destinationPath)
+    public final boolean moveFile(final String sourcePath, final String destinationPath)
     {
-        final String rootPath = this.rootPath + "/" + email;
-
         try 
         {
-            Files.move(Paths.get(rootPath + "/" + sourcePath), Paths.get(rootPath + "/" + destinationPath),
+            Files.move(Paths.get(this.repository + sourcePath), Paths.get(this.repository + destinationPath),
                         StandardCopyOption.REPLACE_EXISTING);
 
             return true;
@@ -83,16 +77,14 @@ public class Service
 
 
     //TODO: Server muss eine 10GB Nachricht erhalten!
-    public final boolean readFile(final String email, final String sourcePath)
+    public final boolean readFile(final String sourcePath)
     {
-        final String rootPath = this.rootPath + "/" + email + "/";
-
         try(
-            InputStream inputStream = new FileInputStream(rootPath + sourcePath);
+            InputStream inputStream = new FileInputStream(this.repository + sourcePath);
             BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
         )
         {
-            byte[] buffer = new byte[4 * 1024];
+            byte[] buffer = new byte[512 * 1024];
             int read;
 
             while((read = bufferedInputStream.read(buffer, 0, buffer.length)) != 1)

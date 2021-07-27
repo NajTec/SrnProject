@@ -2,6 +2,7 @@ package com.service;
 
 import java.util.List;
 
+import com.storage.Repository;
 import com.storage.Storage;
 
 /**
@@ -19,9 +20,10 @@ public class App
 
 
         Storage storage = new Storage("storage");
-        //storage.createRepository("matthias@gmail.com");
-        List<String> list = storage.listDirectories("directory", "matthias@gmail.com", "Repository");
+        Repository repository = new Repository(storage.getRootPath(), "matthias@gmail.com");
+        //repository.createRepository();
+        List<String> list = repository.listDirectories("directory", "Repository");
         list.forEach(System.out::println);
-        storage.deleteRepository("matthias@gmail.com");
+        repository.deleteRepository();
     }
 }
