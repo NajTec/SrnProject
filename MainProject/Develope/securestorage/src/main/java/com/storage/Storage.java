@@ -2,17 +2,15 @@ package com.storage;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.SimpleFileVisitor;
-import java.nio.file.attribute.BasicFileAttributes;
 import java.util.List;
-import java.util.Vector;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import org.springframework.util.FileSystemUtils;
 
 public class Storage 
 {
@@ -47,14 +45,14 @@ public class Storage
      * */
     public final boolean createRepository(final String email)
     {
-        final String rootPath = this.rootPath + "/" + email;
+        final String rootPath = this.rootPath + "/" + email + "/";
 
         try 
         {
             Files.createDirectory(Paths.get(rootPath));
-            Files.createDirectory(Paths.get(rootPath + "/" + "Storage"));
-            Files.createDirectory(Paths.get(rootPath + "/" + "Key"));
-            Files.createDirectory(Paths.get(rootPath + "/" + "NotaryKey"));
+            Files.createDirectory(Paths.get(rootPath + "Repository"));
+            Files.createDirectory(Paths.get(rootPath + "Key"));
+            Files.createDirectory(Paths.get(rootPath + "NotaryKey"));
 
             return true;
         } 
@@ -71,37 +69,9 @@ public class Storage
      * */
     public final boolean deleteRepository(final String email)
     {
-        final String rootPath = this.rootPath + "/" + email;
+        final String rootPath = this.rootPath + "/" + email + "/";
      
-        try 
-        {
-            Files.walkFileTree(Paths.get(rootPath), 
-                                    new SimpleFileVisitor<Path>() 
-                                    {
-                                        @Override
-                                        public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException 
-                                        {
-                                            Files.delete(file);
-
-                                            return FileVisitResult.CONTINUE;
-                                        }
-                                                        
-                                        @Override
-                                        public FileVisitResult postVisitDirectory(Path directory, IOException exc) throws IOException 
-                                        {
-                                            Files.delete(directory);
-
-                                            return FileVisitResult.CONTINUE;
-                                        }
-                                    }
-                                );
-
-            return true;
-          } 
-          catch(IOException e)
-          {
-            return false;
-          }
+        return FileSystemUtils.deleteRecursively(new File(rootPath));
     }
 
 
@@ -110,13 +80,13 @@ public class Storage
      * */
     public boolean createDirectory(final String email, final String directory)
     {
-        final String rootPath = this.rootPath + "/" + email;
+        final String rootPath = this.rootPath + "/" + email + "/";
 
         try 
         {
-            Files.createDirectory(Paths.get(rootPath + "/" + "Storage" + "/" + directory));
-            Files.createDirectory(Paths.get(rootPath + "/" + "Key" + "/" + directory));
-            Files.createDirectory(Paths.get(rootPath + "/" + "NotaryKey" + "/" + directory));
+            Files.createDirectory(Paths.get(rootPath + "Repository" + "/" + directory));
+            Files.createDirectory(Paths.get(rootPath + "Key" + "/" + directory));
+            Files.createDirectory(Paths.get(rootPath + "NotaryKey" + "/" + directory));
 
             return true;
         } 
@@ -132,62 +102,32 @@ public class Storage
      * */
     public boolean deleteDirectory(final String email, final String directory)
     {
-        final String rootPath = this.rootPath + "/" + email + "/" + "Storage" + "/" + directory;
+        final String rootPath = this.rootPath + "/" + email + "/" + "Repository" + "/";
      
-        try 
-        {
-            Files.walkFileTree(Paths.get(rootPath), 
-                                    new SimpleFileVisitor<Path>() 
-                                    {
-                                        @Override
-                                        public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException 
-                                        {
-                                            Files.delete(file);
-
-                                            return FileVisitResult.CONTINUE;
-                                        }
-                                                        
-                                        @Override
-                                        public FileVisitResult postVisitDirectory(Path directory, IOException exc) throws IOException 
-                                        {
-                                            Files.delete(directory);
-
-                                            return FileVisitResult.CONTINUE;
-                                        }
-                                    }
-                                );
-
-            return true;
-          } 
-          catch(IOException e)
-          {
-            return false;
-          }
+        return FileSystemUtils.deleteRecursively(new File(rootPath + directory));
     }
 
 
     /** 
      * Return: List of directories.
      * */
-    public final Vector<String> listDirectories(final String stringPredicate, final String email, final String directory)
+    public final List<String> listDirectories(final String stringPredicate, final String email, final String directory)
     {
         Predicate<? super Path> predicate = null;
 
         if(stringPredicate == "directory")
             predicate = Files::isDirectory;
 
-        try (Stream<Path> walk = Files.walk(Paths.get(this.rootPath + "/" + email + "/" + directory))) 
+        final String rootPath = this.rootPath + "/" + email + "/" + "Repository" + "/";
+
+        try (Stream<Path> walk = Files.walk(Paths.get(rootPath + directory))) 
         {
             List<String> result = walk.filter(predicate)
-                                        .map(x -> x.toString())
+                                        .filter(s -> {if(s.toString().contains(email + "/" + "KeyNotary")) return false; else return true;})
+                                        .map(x -> x.toString().split(this.rootPath + "/")[1])
                                         .collect(Collectors.toList());
 
-            Vector<String> vector = new Vector<String>();            
-            for(String value : result)
-                if(!value.contains(email + "/" + "KeyNotary"))
-                    vector.add(value.split(this.rootPath + "/")[1]);
-
-            return vector;
+            return result;
         } 
         catch (IOException e) 
         {
@@ -199,32 +139,72 @@ public class Storage
     /** 
      * Return: List of files.
      * */
-    public final Vector<String> listFiles(final String directory)
+    public final List<String> listFiles(final String email, final String directory)
     {
-        Vector<String> files = new Vector<String>();
-        File[] listOfFiles = new File(directory).listFiles();
+        final String rootPath = this.rootPath + "/" + email + "/" + "Repository" + "/";
 
-        for(File file : listOfFiles)
-            if(file.isFile())
-                files.add(file.getName());
+        try (Stream<Path> walk = Files.walk(Paths.get(rootPath + directory)))
+        {
+            List<String> files = walk.filter(Files::isRegularFile)
+                                        .map(p -> p.toString())
+                                        .collect(Collectors.toList());
 
-        return files;    
+            return files;
+        } 
+        catch (Exception e) 
+        {
+            return null;
+        }   
     }
 
 
     /** 
      * Return: List of files and directories.
      * */
-    public final Vector<String> listFilesAndDirectories(final String directory)
+    public final List<String> listAllInDirectories(final String email, final String directory)
     {
-        Vector<String> files = new Vector<String>();
-        File[] listOfFiles = new File(directory).listFiles();
+        final String rootPath = this.rootPath + "/" + email + "/" + "Repository" + "/";
 
-        for(File file : listOfFiles)
-            if(file.isFile() || file.isDirectory())
-                files.add(file.getName());
+        //TODO: Test if it works else use comment
+        return Stream.of(new File(rootPath + directory).list()).collect(Collectors.toList());
 
-        return files;    
+        /*
+        try (Stream<Path> walk = Files.walk(Paths.get(rootPath + directory)))
+        {
+            List<String> files = walk.map(p -> p.toString())
+                                        .collect(Collectors.toList());
+
+            return files;
+        } 
+        catch (Exception e) 
+        {
+            return null;
+        }  
+        */ 
     }
-    
+
+
+    /** 
+     * Return: Storage size
+     * */
+    public final long currentRepositorySize(final String email, final String directory)
+    {
+        long size = 0;
+
+        final String mainDirectory = this.rootPath + "/" + email + "/" + "Repository" + "/";
+
+        try 
+        {
+            size = Files.walk(Paths.get(mainDirectory + directory))
+                            .filter(p -> p.toFile().isFile())
+                            .mapToLong(p -> p.toFile().length())
+                            .sum();
+
+            return size;
+        } 
+        catch (IOException e) 
+        {
+            return 0;
+        }
+    }
 }
