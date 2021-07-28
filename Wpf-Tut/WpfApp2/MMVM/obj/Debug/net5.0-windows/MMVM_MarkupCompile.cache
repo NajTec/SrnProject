@@ -5,16 +5,16 @@ winexe
 C#
 .cs
 C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\MMVM\obj\Debug\net5.0-windows\
-MMVM_aka3mata_wpftmp
+MMVM
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\MMVM\App.xaml
-11407045341
+1-1351704627
 
-6-28978386
+5-78859974
 217-143038694
-MainWindow.xaml;
+Views\ShellView.xaml;
 
-True
+False
 
