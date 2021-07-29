@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\MMVM\App.xaml
-1-1351704627
+3-280962735
 
-8-432424846
+121560595268
 217-143038694
-Views\ShellView.xaml;
+Views\FirstChildView.xaml;Views\SecondChildView.xaml;Views\ShellView.xaml;
 
-False
+True
 

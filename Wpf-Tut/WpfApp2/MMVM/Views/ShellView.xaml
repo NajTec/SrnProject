@@ -20,7 +20,8 @@
             <RowDefinition Height="20" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="20" />
@@ -37,5 +38,10 @@
         <TextBlock Grid.Row="3" Grid.Column="2" x:Name="SelectedPerson_LastName"/>
         <!--Row 4-->
         <Button x:Name="ClearText" Grid.Row="4" Grid.Column="1">Clear Names</Button>
+        <!--Row 5-->
+        <Button x:Name="LoadPageOne" Grid.Row="5" Grid.Column="1">LoadFirstPage</Button>
+        <Button x:Name="LoadPageTwo" Grid.Row="5" Grid.Column="2">LoadSecondPage</Button>
+        <!--Row 6-->
+        <ContentControl Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="5" x:Name="ActiveItem"></ContentControl>
     </Grid>
 </Window>

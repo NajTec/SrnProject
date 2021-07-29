@@ -71,3 +71,7 @@ C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\MMVM\obj\Debug\net5.0
 C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\MMVM\obj\Debug\net5.0-windows\ref\MMVM.dll
 C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\MMVM\obj\Debug\net5.0-windows\MMVM.pdb
 C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\MMVM\obj\Debug\net5.0-windows\MMVM.genruntimeconfig.cache
+C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\MMVM\obj\Debug\net5.0-windows\Views\FirstChildView.g.cs
+C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\MMVM\obj\Debug\net5.0-windows\Views\SecondChildView.g.cs
+C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\MMVM\obj\Debug\net5.0-windows\Views\FirstChildView.baml
+C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\MMVM\obj\Debug\net5.0-windows\Views\SecondChildView.baml

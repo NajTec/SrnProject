@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MMVM.ViewModels
 {
-    public class ShellViewModel : Screen
+    public class ShellViewModel : Conductor<object>
     {
         private string _firstname = "Jan";
         private string _lastName;
@@ -79,6 +79,15 @@ namespace MMVM.ViewModels
             LastName = string.Empty;
         }
 
+        public void LoadPageOne() 
+        {
+            ActivateItemAsync(new FirstChildViewModel());
+        }
+
+        public void LoadPageTwo()
+        {
+            ActivateItemAsync(new SecondChildViewModel());        
+        }
 
     }
 }

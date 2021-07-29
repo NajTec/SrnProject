@@ -1,0 +1,4 @@
+C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\SrnClient\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\SrnClient\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\SrnClient\obj\Debug\net5.0-windows\SrnClient_MarkupCompile.cache
+C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\SrnClient\obj\Debug\net5.0-windows\SrnClient_MarkupCompile.lref
