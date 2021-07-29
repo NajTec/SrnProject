@@ -4,9 +4,57 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SrnClient.Views"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
+             Background="AliceBlue"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <!-- Row 1 -->
+        <!-- todo: Input-Validation -->
+        <TextBlock Grid.Row="1" Grid.Column="1" FontSize="18" Margin="0,0,0,10" FontWeight="Bold">Register</TextBlock>
+        <!-- Row 2 -->
+        <TextBlock Grid.Row="2" Grid.Column="1" FontSize="18">Email:</TextBlock>
+        <TextBox Grid.Row="2" Grid.Column="2" MinWidth="200" Text="{Binding Path=Mail, Mode=OneWayToSource}"></TextBox>
+        <TextBlock Grid.Row="2" Grid.Column="3" FontSize="18" Margin="10,0,0,0">Password:</TextBlock>
+        <TextBox Grid.Row="2" Grid.Column="4" MinWidth="200" Margin="10,0,0,0" Text="{Binding Path=Password, Mode=OneWayToSource}"></TextBox>
+        <!-- Row 3 -->
+        <TextBlock Grid.Row="3" Grid.Column="1" FontSize="18">LastName:</TextBlock>
+        <TextBox Grid.Row="3" Grid.Column="2" MinWidth="200" Text="{Binding Path=LastName, Mode=OneWayToSource}"></TextBox>
+        <TextBlock Grid.Row="3" Grid.Column="3" FontSize="18" Margin="10,0,0,0">FirstName:</TextBlock>
+        <TextBox Grid.Row="3" Grid.Column="4" MinWidth="200" Margin="10,0,0,0" Text="{Binding Path=FirstName, Mode=OneWayToSource}"></TextBox>
+        <!-- Row 4 -->
+        <TextBlock Grid.Row="4" Grid.Column="1" FontSize="18">Birthday:</TextBlock>
+        <TextBox Grid.Row="4" Grid.Column="2" MinWidth="200" Text="{Binding Path=Birthday, Mode=OneWayToSource}"></TextBox>
+        <TextBlock Grid.Row="4" Grid.Column="3" FontSize="18" Margin="10,0,0,0">BirthPlace:</TextBlock>
+        <TextBox Grid.Row="4" Grid.Column="4" MinWidth="200" Margin="10,0,0,0" Text="{Binding Path=Birthplace, Mode=OneWayToSource}"></TextBox>
+        <!-- Row 5 -->
+        <TextBlock Grid.Row="5" Grid.Column="1" FontSize="18">Country:</TextBlock>
+        <TextBox Grid.Row="5" Grid.Column="2" MinWidth="200" Text="{Binding Path=Country, Mode=OneWayToSource}"></TextBox>
+        <TextBlock Grid.Row="5" Grid.Column="3" FontSize="18" Margin="10,0,0,0">State:</TextBlock>
+        <TextBox Grid.Row="5" Grid.Column="4" MinWidth="200" Margin="10,0,0,0" Text="{Binding Path=State, Mode=OneWayToSource}"></TextBox>
+        <!-- Row 6 -->
+        <TextBlock Grid.Row="6" Grid.Column="1" FontSize="18">Street:</TextBlock>
+        <TextBox Grid.Row="6" Grid.Column="2" MinWidth="200" Text="{Binding Path=Street, Mode=OneWayToSource}"></TextBox>
+        <!-- Row 7 -->
+        <Button x:Name="RegisterUser" Grid.Row="7" Grid.Column="2" MaxWidth="150" Margin="0,0,50,0">Register</Button>
     </Grid>
 </UserControl>

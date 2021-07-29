@@ -9,8 +9,11 @@ namespace SrnClient.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {
-        private string _userName;
+        private string _userName = "Jan";
+        public ShellViewModel()
+        {
 
+        }
         public string UserName
         {
             get 
@@ -23,12 +26,12 @@ namespace SrnClient.ViewModels
             }
         }
 
-        public void LoadPageOne()
+        public void LoadLogin()
         {
             ActivateItemAsync(new LoginViewModel());
         }
 
-        public void LoadPageTwo()
+        public void LoadRegister()
         {
             ActivateItemAsync(new RegisterViewModel());
         }

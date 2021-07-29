@@ -28,8 +28,15 @@
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
         <!-- Row 1 -->
-        <TextBlock Grid.Row="1" Grid.Column="1" FontSize="18">Srn-Client</TextBlock>
-        <!-- Row 2-->
-        <TextBlock Grid.Row="2" Grid.Column="1" FontSize="18">Names des User:</TextBlock> 
+        <TextBlock Grid.Row="1" Grid.Column="1" FontSize="18" Margin="0,0,0,10">Srn-Client</TextBlock>
+        <!-- Row 2 -->
+        <TextBlock Grid.Row="2" Grid.Column="1" FontSize="18" Margin="0,0,0,10">Name des User:</TextBlock>
+        <TextBlock Text="{Binding Path=UserName, Mode=OneWay}" Grid.Row="2" Grid.Column="2" FontSize="18"></TextBlock>
+        <!-- Row 3 -->
+        <Button x:Name="LoadLogin" Grid.Row="3" Grid.Column="1" Margin="0,0,0,10">LoginPage</Button>
+        <Button x:Name="LoadRegister" Grid.Row="3" Grid.Column="2" Margin="0,0,0,10" Grid.ColumnSpan="1">RegisterPage</Button>
+        <!-- Row 4-->
+        <ContentControl Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="5" x:Name="ActiveItem" Grid.RowSpan="3"></ContentControl>
+        
     </Grid>
 </Window>

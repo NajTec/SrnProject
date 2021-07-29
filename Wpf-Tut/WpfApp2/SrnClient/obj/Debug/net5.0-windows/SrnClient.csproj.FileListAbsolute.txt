@@ -75,3 +75,5 @@ C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\SrnClient\obj\Debug\n
 C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\SrnClient\obj\Debug\net5.0-windows\SrnClient.genruntimeconfig.cache
 C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\SrnClient\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\SrnClient\obj\Debug\net5.0-windows\App.baml
+C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\SrnClient\obj\Debug\net5.0-windows\Views\FileView.g.cs
+C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\SrnClient\obj\Debug\net5.0-windows\Views\FileView.baml

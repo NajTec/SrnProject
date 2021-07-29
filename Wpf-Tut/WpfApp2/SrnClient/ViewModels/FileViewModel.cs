@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace SrnClient.ViewModels
 {
-    public class LoginViewModel : Conductor<object>
+    public class FileViewModel : Screen
     {
-        public void LoadFileManager() 
-        {
-            ActivateItemAsync(new FileViewModel());
-        }
+
     }
 }
