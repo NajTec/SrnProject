@@ -13,8 +13,6 @@
 
   <ItemGroup>
     <Folder Include="Contracts\" />
-    <Folder Include="Views\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 
 </Project>

@@ -243,6 +243,108 @@ namespace SrnClient.Services
             return SymmetricDecryptECB(key, aes_key);
         }
 
+        private byte[] SymmetricEncryptECB(byte[] data, byte[] aes_key)
+        {
+            byte[] encrypted = null;
+
+            using (AesCryptoServiceProvider aesECB = new AesCryptoServiceProvider())
+            {
+                aesECB.Mode = CipherMode.ECB;
+                aesECB.Padding = PaddingMode.Zeros;
+                aesECB.Key = aes_key;
+
+                // Create an encryptor to perform the stream transform.
+                ICryptoTransform encryptor = aesECB.CreateEncryptor(aesECB.Key, aesECB.IV);
+
+                // Create the streams used for encryption.
+                using (MemoryStream msEncrypt = new MemoryStream())
+                {
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    {
+                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                        {
+                            //Write iv to the stream.
+                            string dataAsString = Convert.ToBase64String(data);
+                            swEncrypt.Write(dataAsString);
+                        }
+                        encrypted = msEncrypt.ToArray();
+                    }
+                }
+            }
+
+            return encrypted;
+        }
+
+        private byte[] SymmetricDecryptECB(byte[] data, byte[] aes_key)
+        {
+            string decryptedIv = string.Empty;
+
+            using (Aes aesECB = Aes.Create())
+            {
+                aesECB.Mode = CipherMode.ECB;
+                aesECB.Padding = PaddingMode.Zeros;
+                aesECB.Key = aes_key;
+
+                // Create a decryptor to perform the stream transform.
+                using (ICryptoTransform decryptor = aesECB.CreateDecryptor(aesECB.Key, aesECB.IV))
+                {
+                    // Create the streams used for decryption.
+                    using (MemoryStream msDecrypt = new MemoryStream(data))
+                    {
+                        using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                        {
+                            using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                            {
+
+                                // Read the decrypted bytes from the decrypting stream
+                                // and place them in a string.
+
+                                decryptedIv = srDecrypt.ReadToEnd();
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            int index = decryptedIv.LastIndexOf(@"=");
+            if (index > 0)
+                decryptedIv = decryptedIv.Substring(0, index + 1);
+
+            return Convert.FromBase64String(decryptedIv);
+        }
+
+        public static byte[] HashAndSignBytes(byte[] DataToSign, RSA rsa)
+        {
+            try
+            {
+                // Hash and sign the data. Pass Pass HashAlgorithmName.SHA256
+                // to specify the hashing algorithm.
+                return rsa.SignData(DataToSign, System.Security.Cryptography.HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
+            }
+            catch (CryptographicException e)
+            {
+                Console.WriteLine(e.Message);
+
+                return null;
+            }
+        }
+
+        public static bool VerifySignedHash(byte[] DataToVerify, byte[] SignedData, RSA rsa)
+        {
+            try
+            {
+                // Verify the data using the signature.  Pass HashAlgorithmName.SHA256
+                // to specify the hashing algorithm.
+                return rsa.VerifyData(DataToVerify, SignedData, System.Security.Cryptography.HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
+            }
+            catch (CryptographicException e)
+            {
+                Console.WriteLine(e.Message);
+
+                return false;
+            }
+        }
 
 
 

@@ -5,16 +5,16 @@ winexe
 C#
 .cs
 C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\SrnClient\obj\Debug\net5.0-windows\
-SrnClient_aajldtfb_wpftmp
+SrnClient
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\JanKl\Documents\GitHub\SrnProject\Wpf-Tut\WpfApp2\SrnClient\App.xaml
-11407045341
+3-62345247
 
-51636173674
+111119338372
 217-143038694
-MainWindow.xaml;
+Views\LoginView.xaml;Views\RegisterView.xaml;Views\ShellView.xaml;
 
-True
+False
 
